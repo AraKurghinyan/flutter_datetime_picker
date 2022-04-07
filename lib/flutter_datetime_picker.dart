@@ -7,6 +7,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter_datetime_picker/src/datetime_picker_theme.dart';
 import 'package:flutter_datetime_picker/src/date_model.dart';
 import 'package:flutter_datetime_picker/src/i18n_model.dart';
+import 'package:flutter_datetime_picker/src/date_format.dart' as format;
 
 export 'package:flutter_datetime_picker/src/datetime_picker_theme.dart';
 export 'package:flutter_datetime_picker/src/date_model.dart';
@@ -17,6 +18,13 @@ typedef DateCancelledCallback();
 typedef String? StringAtIndexCallBack(int index);
 
 class DatePicker {
+  static String formatDate(
+    DateTime date,
+    List<String> formats,
+    LocaleType locale,
+  ) =>
+      format.formatDate(date, formats, locale);
+
   ///
   /// Display date picker bottom sheet.
   ///
